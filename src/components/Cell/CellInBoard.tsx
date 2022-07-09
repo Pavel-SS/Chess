@@ -8,9 +8,8 @@ export const CellInBoard: React.FC<CellProps> = ({cell}) => {
     return (
         <div 
             className={['cell', cell.color].join(' ')}
-
         >
-
+            {cell.figure}
         </div>
     )
 }
