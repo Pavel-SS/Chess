@@ -8,7 +8,7 @@ export class Cell {
     readonly color: Colors;
     figure: Figure | null; // два случая , когда в клетке есть фигура и когда фигуры нет
     board: Board;
-    availabel: boolean;// показывает досупность хода выбранной фигуры
+    available: boolean;// показывает досупность хода выбранной фигуры
     id: number; // для реакт ключей
 
     constructor(board: Board, x:number, y:number, color:Colors, figure: Figure | null){
@@ -17,7 +17,7 @@ export class Cell {
         this.board = board;
         this.color = color;
         this.figure = figure;
-        this.availabel = false;
+        this.available = false;
         this.id = Math.random()
     }
 }

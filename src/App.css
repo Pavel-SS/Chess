@@ -18,16 +18,37 @@
 }
 
 .cell {
+  position: relative;
   display: flex;
   align-items:center;
   justify-content: center;
   width: 5rem;
   height: 5rem;
+  
 }
 
+.cell > img{
+  position: relative;
+  width: auto;
+  height: 100%;
+}
 .cell_black{
-  background-color: #000000;
+  background-color: #3f3e3e;
 }
 .cell_white{
-  background-color: #f8e8c5;
+  background-color: #49484975;
+}
+
+.selected {
+  background-color: rgb(102, 204, 116);
+}
+
+.move-available{
+  height: 1em;
+  width: 1em;
+  border-radius: 50%;
+  background-color: rgb(44, 160, 60);
+}
+.atack {
+  background-color:rgb(214, 100, 65);
 }
