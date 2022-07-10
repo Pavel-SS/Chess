@@ -20,4 +20,15 @@ export class Cell {
         this.available = false;
         this.id = Math.random()
     }
+
+    //двигаем фигуры по клеткам (если фигура находится в клетке и ее можно перемещать)
+    moveFigure(target:Cell){
+        if(this.figure && this.figure?.canMove(target)){
+            this.figure.moveFigure(target);
+            //добавляем фигуру в перемещенную клетку
+            target.figure = this.figure;
+            //удаляем фигуру из той клетки, где она стояла
+            this.figure = null;
+        }
+    }
 }

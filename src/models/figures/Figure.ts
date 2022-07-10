@@ -8,12 +8,11 @@ import {
 
 export enum FigureNames {
     KING = 'KING',
-        QUEEN = 'QUEEN',
-        BISHOP = 'BISHOP',
-        KNIGHT = 'KNIGHT',
-        ROOK = 'ROOK',
-        PAWN = 'PAWN',
-
+    QUEEN = 'QUEEN',
+    BISHOP = 'BISHOP',
+    KNIGHT = 'KNIGHT',
+    ROOK = 'ROOK',
+    PAWN = 'PAWN',
 }
 export class Figure {
     color: Colors;
@@ -34,5 +33,7 @@ export class Figure {
     canMove(target: Cell): boolean {
         return true;
     }
-    moveFigure(target: Cell) {}
+    moveFigure(target: Cell) {
+        
+    }
 }

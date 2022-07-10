@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Board } from "../../models/Board";
 import { Cell } from "../../models/Cell";
 import { CellInBoard } from "../Cell/CellInBoard";
@@ -11,11 +11,21 @@ interface BoardProps{
 export const Chessboard: React.FC<BoardProps> = ({board, setBoard}) => {
     const [selectCell, setSelectCell] = useState<Cell | null>(null)
 
+    useEffect(()=>{
+        lightAvailableCells()
+    },[selectCell])
+
     function clickCell(cell: Cell){
-        if( cell.figure){
+        // если выбраная клетка не совпадает с клеткой на котолрую мы хотим походить и в эту клетку мы можем перемещать фигуру, тогда мы ее перемещаем, а затем выбраную клетку можно обнулить
+        if (selectCell && selectCell !== cell && selectCell.figure?.canMove(cell)) {
+            selectCell.moveFigure(cell);
+            setSelectCell(null);
+            updateBoard()
+        }else{
             setSelectCell(cell)
         }
     }
+    
     function lightAvailableCells(){
         board.lightAvailableCells(selectCell)
         updateBoard()
