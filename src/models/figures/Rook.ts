@@ -9,4 +9,13 @@ export class Rook extends Figure {
         this.figure = color === Colors.BLACK ? blackFigure : whiteFigure;
         this.name = FigureNames.ROOK;
     }
+    canMove(target: Cell): boolean {
+        if(!super.canMove(target)){
+            return false
+        }
+        if (this.cell.isEmptyHorizontal(target) || this.cell.isEmptyVertical(target)){
+            return true
+        }
+        return false
+    }
 }
