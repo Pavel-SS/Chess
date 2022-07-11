@@ -4,6 +4,7 @@
 }
 .App{
   display: flex;
+  flex-direction: column;
   align-items:center;
   justify-content: center;
   width: 100vw;
@@ -51,4 +52,22 @@
 }
 .atack {
   background-color:rgb(214, 100, 65);
+}
+
+.panel{
+  background-color: rgb(0, 0, 0);
+  width: auto;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  padding: 0 10px;
+}
+.active_white{
+  color:rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+}
+
+.active_black{
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
 }
