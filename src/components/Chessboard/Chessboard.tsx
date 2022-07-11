@@ -44,7 +44,7 @@ export const Chessboard: React.FC<BoardProps> = ({board, setBoard, currentPlayer
     }
 
     return(
-        <>
+        <div className="section__chessboard">
             <h2 className={['panel', currentPlayer?.color === 'cell_black'? "active_black": "active_white"].join(' ')}>
                 Ход {[currentPlayer?.color === 'cell_black'?'черного':'белого'].join(' ')} игрока
             </h2>
@@ -62,6 +62,6 @@ export const Chessboard: React.FC<BoardProps> = ({board, setBoard, currentPlayer
                 )
                 })}
             </div>
-        </>  
+        </div>  
     )
 }

@@ -4,13 +4,15 @@
 }
 .App{
   display: flex;
-  flex-direction: column;
   align-items:center;
   justify-content: center;
   width: 100vw;
   height: 100vh;
 }
-
+.section__chessboard{
+  display: flex;
+  flex-direction: column;
+}
 .chessboard{
   display: flex;
   flex-wrap: wrap;
@@ -73,8 +75,19 @@
 }
 
 .lost-figure{
-  height: calc(50px-60px);
-  padding: 30px;
-  margin-left: 50px;
-  background-color:aquamarine;
+  height: calc(5em*8 - 20px);
+  padding: 20px 10px 0 10px;
+  margin-top: 40px;
+  background-color:rgb(173, 140, 102);
+  text-align: center;
+  line-height: 40px;
+}
+
+.lost-figure img{
+  width: 30px;
+  height: 100%;
+}
+.lost-figure p{
+  margin: 2px 0 10px;
+  line-height: 14px;
 }

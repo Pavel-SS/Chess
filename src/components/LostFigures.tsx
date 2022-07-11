@@ -16,10 +16,13 @@ export const LostFigures: React.FC<LostFiguresProps> = ({title, figures}) => {
                 {figures.map(fig => {
                     return(   
                         <div key={fig.id}>
-                            {fig.name} 
+                            
                             {fig.figure 
                             && <img src={fig.figure} alt="chess figure"/> 
                             }
+                            <p>
+                                {fig.name}
+                            </p>
                         </div>
                     )
                 })}
