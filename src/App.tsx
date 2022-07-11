@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import { Chessboard } from './components/Chessboard/Chessboard';
+import { LostFigures } from './components/';
 import { Board } from './models/Board';
 import { Colors } from './models/Color';
 import { Players } from './models/Players';
@@ -35,6 +36,14 @@ function App() {
         setBoard={setBoard}
         currentPlayer = {currentPlayer}
         changePlayers = {changePlayers}
+      />
+      <LostFigures 
+        title ='Белые фигуры'
+        figures = {board.lostFiguresWhite} 
+      />
+      <LostFigures
+        title ='Черные фигуры'
+        figures = {board.lostFiguresBlack} 
       />
     </div>
   );

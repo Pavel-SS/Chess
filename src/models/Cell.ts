@@ -26,10 +26,15 @@ export class Cell {
         this.figure = figure;
         this.figure.cell = this;
     }
+    
     //двигаем фигуры по клеткам (если фигура находится в клетке и ее можно перемещать)
     moveFigure(target:Cell){
         if(this.figure && this.figure?.canMove(target)){
             this.figure.moveFigure(target);
+            //проверка на удаление съеденой фигуры
+            if(target.figure){
+                this.board.addLostFigure(target.figure)
+            }
             //добавляем фигуру в перемещенную клетку
             target.setFigure(this.figure);
             //удаляем фигуру из той клетки, где она стояла

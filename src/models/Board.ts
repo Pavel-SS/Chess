@@ -6,9 +6,12 @@ import { Queen } from './figures/Queen';
 import { Cell } from "./Cell";
 import { Colors } from "./Color";
 import { King } from "./figures/King";
+import { Figure } from './figures/Figure';
 
 export class Board {
     cells: Cell[][] = []
+    lostFiguresBlack: Figure[] = []
+    lostFiguresWhite: Figure[] = []
 
     public initCells(){
         for(let i=0; i < 8; i++){
@@ -87,5 +90,9 @@ export class Board {
         this.KnightsAdd()
         this.RooksAdd()
         this.PawnsAdd()
+    }
+    // Метод добавления съеденой фигуры
+    addLostFigure(figure: Figure){
+        figure.color === Colors.BLACK ? this.lostFiguresBlack.push(figure) : this.lostFiguresWhite.push(figure)
     }
 }
